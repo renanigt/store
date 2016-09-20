@@ -10,9 +10,14 @@ RSpec.describe Category do
       expect(category.invalid?).to be true
     end
 
-    it "title has erros" do
+    it "title has errors" do
       category.invalid?
       expect(category.errors[:title].any?).to be true
+    end
+
+    it "is valid" do
+      category = Category.new(title:"Books")
+      expect(category.valid?).to be true
     end
 
   end
