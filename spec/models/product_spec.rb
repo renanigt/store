@@ -23,7 +23,7 @@ RSpec.describe Product do
     it "is valid" do
       category = Category.create(title: "Books")
       product = Product.new(title: "Rails Book", description: "Book about Rails", category_id: category.id)
-      expect(product.valid?).to be true
+      expect(product).to be_valid
     end
   
   end

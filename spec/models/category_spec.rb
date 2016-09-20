@@ -17,7 +17,7 @@ RSpec.describe Category do
 
     it "is valid" do
       category = Category.new(title:"Books")
-      expect(category.valid?).to be true
+      expect(category).to be_valid
     end
 
   end
