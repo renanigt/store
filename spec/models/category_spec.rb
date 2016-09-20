@@ -7,7 +7,7 @@ RSpec.describe Category do
     let(:category) { Category.new(title: "") }
     
     it "is invalid" do
-      expect(category.invalid?).to be true
+      expect(category).to be_invalid
     end
 
     it "title has errors" do

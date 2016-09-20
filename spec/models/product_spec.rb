@@ -7,7 +7,7 @@ RSpec.describe Product do
     let(:product) { Product.new(title: "", description: "") }
 
     it "is invalid" do
-      expect(product.invalid?).to be true
+      expect(product).to be_invalid
     end
 
     it "title has errors" do
