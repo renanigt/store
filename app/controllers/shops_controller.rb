@@ -46,7 +46,7 @@ class ShopsController < ApplicationController
   end
 
   def search
-    @shops = Shop.find_by_name(params[:search])
+    @shops = Shop.with_name(params[:search])
     render :index
   end
 

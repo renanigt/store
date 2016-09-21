@@ -30,14 +30,9 @@ RSpec.describe Shop do
   describe "searches" do
     let(:shop) { Shop.create(name: "Test Shop", description: "Test Shop description") }
 
-    it "by name and returns the shop" do
-      shops = Shop.find_by_name("t Sh")
+    it "with name" do
+      shops = Shop.with_name("t Sh")
       expect(shops).to include(shop)
-    end
-
-    it "by name and does not includes the shop" do
-      shops = Shop.find_by_name("TesK")
-      expect(shops).not_to include(shop)
     end
 
   end
