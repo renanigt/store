@@ -1,0 +1,30 @@
+<% if @shop.errors.any? %>
+  <div>
+    <ul>
+      <% @shop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @shop do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :product_id %>
+    <%= collection_select(:shop, :product_ids, Product.all, :id, :title, { :selected => @shop.product_ids }, { multiple: true }) %>
+  </div>
+
+  <div>
+    <%= f.submit 'Save' %>
+  </div>
+
+<% end %>

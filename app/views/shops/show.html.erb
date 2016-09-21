@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shop.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @shop.description %>
+</p>
+<p>
+  <strong>Products:</strong> <br>
+
+  <ul>
+    <% @shop.product.each do |p| %>
+      <li>
+        <%= p.title %>
+      </li>
+    <% end %>
+  </ul>
+  
+</p>
+
+<%= link_to 'Edit', edit_shop_path(@shop) %>
+<%= link_to 'Back', shops_path %>
