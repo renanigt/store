@@ -45,6 +45,11 @@ class ShopsController < ApplicationController
     end
   end
 
+  def search
+    @shops = Shop.find_by_name(params[:search])
+    render :index
+  end
+
   private
 
     def set_shop
