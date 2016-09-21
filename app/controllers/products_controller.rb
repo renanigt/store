@@ -45,6 +45,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def search
+    @products = Product.with_title(params[:title]).with_category(params[:category])
+    render :index
+  end
+
   private
 
     def set_product

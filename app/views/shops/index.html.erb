@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Listing Shops</h1>
+
 <div>
   <%= form_tag(search_shop_path, method: "get") do %>
     <%= label_tag :search, "Search by name:" %> <br>
@@ -7,8 +9,6 @@
     <%= submit_tag "Search", :name => nil %>
   <% end %>
 </div>
-
-<h1>Listing Shops</h1>
 
 <table>
   <thead>

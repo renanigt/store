@@ -2,6 +2,15 @@
 
 <h1>Listing Products</h1>
 
+<div>
+  <%= form_tag(search_product_path, method: "get") do %>
+    <%= label_tag :title, "Search:" %> <br>
+    <%= text_field_tag :title, params[:title], placeholder: "Search Products" %>
+    <%= select_tag :category, options_from_collection_for_select(Category.all, "id", "title", params[:category]) %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div>
+
 <table>
   <thead>
     <th>Title</th>

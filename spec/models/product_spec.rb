@@ -27,4 +27,26 @@ RSpec.describe Product do
     end
   
   end
+
+  describe "searches" do
+    let(:category) { Category.create(title: "Books") }
+    let(:product) { Product.create(title: "Rails Book", description: "Book about Rails", category_id: category.id) }
+
+    it "with title" do
+      products = Product.with_title("ils Book")
+      expect(products).to include(product)
+    end
+
+    it "with category" do
+      products = Product.with_category(category.id)
+      expect(products).to include(product)
+    end
+
+    it "with title and category" do
+      products = Product.with_title("ils Book").with_category(category.id)
+      expect(products).to include(product)
+    end
+
+  end
+
 end
