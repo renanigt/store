@@ -4,7 +4,7 @@ RSpec.describe CategoriesController do
 
   describe "GET #index" do
 
-    it "assgins @categories" do
+    it "assigns @categories" do
       category = Category.create(title: "Book")
       get :index
       expect(assigns(:categories)).to eq([category])
